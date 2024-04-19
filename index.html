@@ -31,25 +31,29 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
             <form>
               <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Recipient:</label>
+                <label for="task-title" class="col-form-label">Task Title</label>
                 <input type="text" class="form-control" id="recipient-name">
               </div>
               <div class="form-group">
-                <label for="message-text" class="col-form-label">Message:</label>
+                <label for="due-date" class="col-form-label">Task Due Date</label>
+                <input type="text" class="form-control" id="task-due-date">
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="col-form-label">Task Description</label>
                 <textarea class="form-control" id="message-text"></textarea>
               </div>
             </form>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Send message</button>
+          <div class="modal-footer d-flex justify-content-center">
+            <button class="btn btn-success" id="submit" data-bs-toggle="modal" data-bs-target="#formModal">Add
+              Task</button>
           </div>
         </div>
       </div>
@@ -60,7 +64,7 @@
           <div class="card-header bg-white">
             <h2 class="card-title mb-1">To Do</h2>
           </div>
-          <div class="card-body bg-light">
+          <div class="card-body bg-light droppable">
             <div id="todo-cards"></div>
           </div>
         </div>
@@ -70,7 +74,7 @@
           <div class="card-header bg-white">
             <h2 class="card-title mb-1">In Progress</h2>
           </div>
-          <div class="card-body bg-light">
+          <div class="card-body bg-light droppable">
             <div id="in-progress-cards"></div>
           </div>
         </div>
@@ -80,7 +84,7 @@
           <div class="card-header bg-white">
             <h2 class="card-title mb-1">Done</h2>
           </div>
-          <div class="card-body bg-light">
+          <div class="card-body bg-light droppable">
             <div id="done-cards"></div>
           </div>
         </div>
